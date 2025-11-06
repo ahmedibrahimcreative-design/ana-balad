@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1762392887599,
+      "tag": "0000_mature_betty_brant",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1762392985307,
+      "tag": "0001_rich_storm",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1762395237284,
+      "tag": "0002_cultured_ted_forrester",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1762395384701,
+      "tag": "0003_medical_retro_girl",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+CREATE TABLE `developmentProjects` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`userId` int NOT NULL,
+	`sectorId` int NOT NULL,
+	`titleAr` varchar(200) NOT NULL,
+	`titleEn` varchar(200) NOT NULL,
+	`descriptionAr` text,
+	`descriptionEn` text,
+	`status` enum('planned','in_progress','completed','paused','cancelled') NOT NULL DEFAULT 'planned',
+	`priority` enum('low','medium','high','urgent') NOT NULL DEFAULT 'medium',
+	`requiredTime` int NOT NULL DEFAULT 0,
+	`requiredMoney` int NOT NULL DEFAULT 0,
+	`requiredEnergy` int NOT NULL DEFAULT 0,
+	`progressPercentage` int NOT NULL DEFAULT 0,
+	`timeSpent` int NOT NULL DEFAULT 0,
+	`moneySpent` int NOT NULL DEFAULT 0,
+	`energySpent` int NOT NULL DEFAULT 0,
+	`expectedImpactOnScore` int NOT NULL DEFAULT 0,
+	`actualImpactOnScore` int NOT NULL DEFAULT 0,
+	`startDate` datetime,
+	`targetCompletionDate` datetime,
+	`actualCompletionDate` datetime,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `developmentProjects_id` PRIMARY KEY(`id`)
+);
+--> statement-breakpoint
+CREATE TABLE `projectMilestones` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`projectId` int NOT NULL,
+	`titleAr` varchar(200) NOT NULL,
+	`titleEn` varchar(200) NOT NULL,
+	`descriptionAr` text,
+	`descriptionEn` text,
+	`isCompleted` boolean NOT NULL DEFAULT false,
+	`orderIndex` int NOT NULL DEFAULT 0,
+	`completedAt` datetime,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	CONSTRAINT `projectMilestones_id` PRIMARY KEY(`id`)
+);
